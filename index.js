@@ -1,6 +1,5 @@
 const fs = require('fs');
 const xml2js = require('xml2js');
-const util = require('util')
 processFiles();
 
 function processFiles() {
@@ -32,7 +31,7 @@ function processFiles() {
 }
 function processVeText(text) {
     let values = [];
-    const lines = text.split('\n').filter(s => s.trim().length > 3).forEach(l => {
+    text.split('\n').filter(s => s.trim().length > 3).forEach(l => {
         l = l.trim();
         const data = l.split(' ').map(n => Number(n));
         values = values.concat(data);
